@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+        font-family: sans-serif;
+        background: linear-gradient(to right, #abecd6, #fbed96);
+}
+
+/* HORIZONTAL LAYOUT */
+
+/* .container{
+    width:700px;
+    height:600px;
+    border: 1px solid #000;
+    margin:auto;
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+} */
+
+/* VERTICAL LAYOUT */
+
+/* .container{
+    width:700px;
+    height:600px;
+    border: 1px solid #000;
+    margin:auto;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container .box{
+    height:80px;
+    width:80px;
+    background-color: #000;
+} */
+
+
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.card-container{
+    width:100%;
+    min-height:500px;
+    padding: 150px 50px;
+        display: flex;
+    gap: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    height:400px;
+    width:320px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 0 40px 40px 40px;
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.24);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+color: #421703;
+transition: all 0.3s ease-in-out;
+cursor: pointer;
+}
+
+.card:hover{
+    scale: 1.1;
+}
+
+.card img{
+    height:250px;
+     width:220px;
+         margin-top: -100px;
+}
+
+.card h2{
+    margin-bottom: 10px;
+}
+
+.card .hoodie-detail{
+        display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.card button.add-to-cart {
+        background-color: #E8B24E;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+transition: all 0.2s ease-in-out;
+}
+
+
+.card  button.add-to-cart:hover{
+    scale: 1.05;
+    background-color: #e4ac43;
+}
+
+.card .size-btns button{
+        background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #421703;
+    cursor: pointer;
+}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Html Form</h1>
+
+    <form>
+      <label for="">User Name:</label>
+      <input
+        type="text"
+        placeholder="Enter your username"
+        maxlength="10"
+        minlength="5"
+        required
+      />
+      <br />
+      <br />
+      <label for="">User Password:</label>
+      <input type="password" placeholder="Enter your password" required />
+      <br />
+      <br />
+      <label for="">User Email:</label>
+      <input type="email" placeholder="Enter your email" required />
+      <br />
+      <br />
+      <label for="">Date of birth:</label>
+      <input type="date" />
+      <br />
+      <br />
+      <input type="file" />
+      <br />
+      <br />
+      <label>Select your gender:</label>
+      <br />
+      <br />
+      <input id="male" type="radio" name="gender" />
+      <label for="male">male</label>
+      <label>
+        <input type="radio" name="gender" />
+        female
+      </label>
+
+      <input type="radio" name="gender" />
+      <label for="">other</label>
+      <br />
+      <br />
+      <label>Select your Course:</label>
+      <br />
+      <br />
+      <input id="web&app" type="checkbox" name="course" />
+      <label for="web&app">web&app</label>
+      <label>
+        <input type="checkbox" name="course" />
+        graphics
+      </label>
+
+      <input type="checkbox" name="course" />
+      <label for="">marketing</label>
+      <br />
+      <br />
+      <textarea name="" id="">Enter your feedback related to form</textarea>
+      <br />
+      <br />
+      <p>Select Campus</p>
+      <select>
+        <option value="" disabled selected>Select any campus</option>
+        <option value="">Dr Mehmood Hussain</option>
+        <option value="">PIA Campus</option>
+        <option value="">Gulberg</option>
+      </select>
+      <br />
+      <br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
