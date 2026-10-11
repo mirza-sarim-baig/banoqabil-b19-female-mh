@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --primary-color: rgb(243, 235, 235);
+    --secondary-color: rgb(189, 56, 56);
+    --tertiary-color: rgb(52, 11, 11);
+    --primary-text-color:rgb(3, 1, 1);
+    --secondary-text-color:black;
+}
+
+.icon{
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+h1{
+    font-size: 50px;
+}
+
+.cards-section{
+  /* background-color: var(--secondary-color); */
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20240919/pngtree-a-background-of-orange-blue-and-yellow-gradients-with-gritty-appearance-image_16233934.jpg");
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;  
+  height: 400px;
+    width: 100%;
+}
+
+.cards-wrapper{
+  
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+section .box{
+    height: 300px;
+    width: 200px;
+    border:2px solid black;
+}
+
+p{
+    color: var(--primary-text-color);
+}
+
+@media(max-width:1024px){
+   body{
+    background-color: navy;
+   }
+    h1{
+    font-size: 30px;
+}
+}
+
+@media(max-width:768px){
+   body{
+    background-color: rgb(128, 119, 0);
+   }
+    h1{
+    font-size: 30px;
+}
+}
+
+@media(max-width:425px){
+   body{
+    background-color: rgb(82, 169, 16);
+   }
+    h1{
+    font-size: 20px;
+}
+}
