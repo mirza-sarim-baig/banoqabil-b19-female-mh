@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DANVOUY Women's T-Shirt</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 32px 20px;
+        display: grid;
+        place-items: center;
+        background: #f4f3ef;
+        color: #24231f;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .product-card {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        width: min(100%, 900px);
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #e8e5de;
+        border-radius: 20px;
+        box-shadow: 0 18px 50px rgb(42 37 26 / 10%);
+      }
+
+      .product-image {
+        min-height: 460px;
+        display: grid;
+        place-items: center;
+        padding: 36px;
+        background: #faf9f6;
+      }
+
+      .product-image img {
+        display: block;
+        width: 100%;
+        max-height: 390px;
+        object-fit: contain;
+      }
+
+      .product-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 44px 40px;
+      }
+
+      .product-id {
+        margin: 0 0 18px;
+        color: #8a8172;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .category {
+        margin: 0 0 12px;
+        color: #68744f;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.7rem, 3vw, 2.25rem);
+        line-height: 1.15;
+      }
+
+      .rating {
+        margin: 18px 0 24px;
+        color: #80621b;
+        font-size: 0.95rem;
+      }
+
+      .rating span {
+        color: #77736b;
+      }
+
+      .description {
+        margin: 0;
+        color: #66635c;
+        font-size: 0.98rem;
+        line-height: 1.75;
+      }
+
+      .price {
+        margin: auto 0 0;
+        padding-top: 30px;
+        color: #27271f;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 20px 14px;
+        }
+
+        .product-card {
+          grid-template-columns: 1fr;
+        }
+
+        .product-image {
+          min-height: 290px;
+          padding: 24px;
+        }
+
+        .product-image img {
+          max-height: 250px;
+        }
+
+        .product-details {
+          padding: 28px 24px 32px;
+        }
+
+        .price {
+          margin-top: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="cardsContainer" id="cardsContainer"></div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

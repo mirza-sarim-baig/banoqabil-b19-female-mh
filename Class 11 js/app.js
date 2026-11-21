@@ -36,6 +36,8 @@ let userPass = prompt("Enter your password");
 
 if (email1 == userEmail && pass1 == userPass) {
   console.log("User is authenticated 1");
+} else if (email2 == userEmail && pass2 == userPass) {
+  console.log("User is authenticated 2");
 } else {
   console.log("user not matched");
 }
