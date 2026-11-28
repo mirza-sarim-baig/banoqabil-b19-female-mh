@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>USer detail page</h1>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      // Extract the "id" parameter
+      const id = params.get("id");
+      console.log(id);
+
+      const dataFetching = async () => {
+        let user = await fetch(`https://fakestoreapi.com/users/${id}`);
+        user = await user.json();
+        console.log(user);
+      };
+
+      dataFetching();
+    </script>
+  </body>
+</html>

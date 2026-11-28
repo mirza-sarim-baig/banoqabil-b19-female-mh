@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #101827, #243b55, #141e30);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+        color: white;
+      }
+
+      h1 {
+        margin-bottom: 35px;
+        font-size: 32px;
+        letter-spacing: 3px;
+      }
+
+      .users-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .user-card {
+        position: relative;
+        width: 100%;
+        max-width: 390px;
+        padding: 32px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+      }
+
+      .user-card::before {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        background: rgba(96, 165, 250, 0.2);
+        filter: blur(60px);
+        top: -70px;
+        right: -60px;
+        pointer-events: none;
+      }
+
+      .profile-header {
+        text-align: center;
+        position: relative;
+        margin-bottom: 28px;
+      }
+
+      .avatar {
+        width: 85px;
+        height: 85px;
+        margin: 0 auto 15px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #60a5fa, #a78bfa);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: 700;
+        color: white;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 8px 25px rgba(96, 165, 250, 0.3);
+      }
+
+      .profile-header h2 {
+        font-size: 24px;
+        text-transform: capitalize;
+        margin-bottom: 6px;
+      }
+
+      .username {
+        color: #a5b4fc;
+        font-size: 14px;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: rgba(74, 222, 128, 0.15);
+        color: #86efac;
+        font-size: 12px;
+        border: 1px solid rgba(74, 222, 128, 0.25);
+      }
+
+      .section-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #93c5fd;
+        margin-bottom: 15px;
+      }
+
+      .info-item {
+        padding: 13px 15px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .info-item span {
+        display: block;
+        color: #94a3b8;
+        font-size: 11px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .info-item p {
+        font-size: 14px;
+        color: #f1f5f9;
+        overflow-wrap: anywhere;
+      }
+
+      .card-footer {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        justify-content: space-between;
+        color: #94a3b8;
+        font-size: 12px;
+      }
+
+      .details-btn {
+        margin: auto;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: #3e4957;
+        color: white;
+      }
+
+      @media (max-width: 450px) {
+        .user-card {
+          padding: 24px 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>API</h1>
+
+    <div class="users-container" id="usersContainer"></div>
+
+    <script>
+      const dataFetching = async () => {
+        let users = await fetch("https://fakestoreapi.com/users");
+        users = await users.json();
+        console.log(users);
+        let usersContainer = document.getElementById("usersContainer");
+
+        for (let i = 0; i < users.length; i++) {
+          usersContainer.innerHTML += `
+         <div class="user-card" id="userCard">
+        <div class="profile-header">
+          <div class="avatar">JD</div>
+          <h2>${users[i].name.firstname}</h2>
+          <p class="username">@johnd</p>
+          <div class="badge">● Active User</div>
+        </div>
+
+        <h3 class="section-title">Personal Information</h3>
+
+        <div class="info-item">
+          <span>User ID</span>
+          <p>${users[i].id}</p>
+        </div>
+
+        <div class="info-item">
+          <span>Email Address</span>
+          <p>john@gmail.com</p>
+        </div>
+
+        <div class="info-item">
+          <span>Phone Number</span>
+          <p>1-570-236-7033</p>
+        </div>
+
+        <div class="card-footer">
+         <button class="details-btn" onclick="detailPage(${users[i].id})"> View Details </button>
+        </div>
+      </div>`;
+        }
+      };
+
+      dataFetching();
+
+      const detailPage = (id) => {
+        console.log("id:", id);
+        window.location.href = `detailPage.html?id=${id}`;
+      };
+    </script>
+  </body>
+</html>
